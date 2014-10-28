@@ -17,6 +17,7 @@ var Rectangle = Object.create(Shape);
 
 var rect = Object.create(Rectangle);
 rect.init();
+
 rect.move(1,1);
 
 console.log(Rectangle.isPrototypeOf(rect));

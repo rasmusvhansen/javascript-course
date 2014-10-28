@@ -3,15 +3,15 @@
 
 // Shape - superclass
 function Shape() {
-  this.x = 0;
-  this.y = 0;
+  this.x = 10;
+  this.y = 10;
 }
 
 // superclass method
 Shape.prototype.move = function(x, y) {
   this.x += x;
   this.y += y;
-  console.info('Shape moved.');
+  console.info('Shape moved to ' + this.x + ', ' + this.y);
 };
 
 // Rectangle - subclass
@@ -28,4 +28,4 @@ var rect = new Rectangle();
 rect instanceof Rectangle; // true
 rect instanceof Shape; // true
 
-rect.move(1, 1); // Outputs, 'Shape moved.'
+rect.move(1, 1);

@@ -9,3 +9,6 @@ var obj = {
 }
 
 obj[propertyName]();
+
+// In this example, we access a function on an object using a string literal to
+// access it using "bracket"-notation

@@ -10,7 +10,7 @@ for(var b = 0; b < 5; b++) {
   console.log(b);
 }
 
-var c = 'C';
+var c = 'A';
 
 switch (c) {
   case 'A':
