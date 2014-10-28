@@ -1,4 +1,5 @@
 # Systematic JavaScript Course
+Sign up at: http://www.codewars.com/
 
 ##Exercises Part 1
 http://www.codewars.com/kata/basic-training-add-item-to-an-array  
