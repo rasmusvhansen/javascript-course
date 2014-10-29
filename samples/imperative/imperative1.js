@@ -20,3 +20,10 @@ switch (c) {
   default:
     console.log('DEFAULT');
 }
+
+var x = 10;
+if (x > 7) {
+  console.log('larger');
+} else {
+  console.log('smaller');
+}
