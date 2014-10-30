@@ -43,7 +43,8 @@
     // Create the search function, that reads the value of "q" from the input field, and makes the ajax call below using that value
     // Hint - return false from this function to avoid page reload when submitting the form
 
-    $.get('https://www.googleapis.com/youtube/v3/search?part=snippet&type=video"&q=' + q + '&key=AIzaSyCSSneZubwLPCXfkoW36ZmEgmRtO8ZZl4c', success);
+    $.get('https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=20&q='
+            + q + '&key=AIzaSyCSSneZubwLPCXfkoW36ZmEgmRtO8ZZl4c', success);
 
     function success(data) {
         console.log(data);
