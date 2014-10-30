@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation using jQuery 2</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        .video {
+            background: linear-gradient(to bottom right, #c2c2d2 , #232343);
+            box-shadow: 7px 7px 3px #888888;
+            margin: 5px;
+            width: 300px;
+            float: left;
+            min-height: 340px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .video p:first-of-type {
+            font-weight: bold;
+        }
+
+        img {
+            max-height: 160px;
+            max-width: 280px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <input type="text" id="q" placeholder="Search Youtube">
+    <button>Search</button>
+</form>
+
+<div id="results">
+    No results yet!
+</div>
+
+<script>
+    $('form').on('submit', search);
+
+    function search() {
+        var q = $('#q').val();
+        $.get('https://www.googleapis.com/youtube/v3/search?part=snippet&type=video"&q=' + q + '&key=AIzaSyCSSneZubwLPCXfkoW36ZmEgmRtO8ZZl4c', success);
+        return false;
+    }
+
+    function success(data) {
+        console.log(data);
+
+        var results = $('#results');
+        var videos = data.items.map(function (video) {
+            var snippet = video.snippet;
+            return {title: snippet.title, thumb: snippet.thumbnails.medium.url, description: snippet.description, link: video.id.videoId };
+        });
+
+        results.empty();
+        videos.forEach(function (v) {
+            results.append($('' +
+                    '<div class="video">' +
+                        '<p>' + v.title + '</p>' +
+                        '<a href="https://www.youtube.com/watch?v=' + v.link + '"><img src="' + v.thumb + '" height="200"></a>' +
+                        '<p>' + v.description + '</p>' +
+                    '</div>'));
+        });
+    }
+
+</script>
+</body>
+</html>

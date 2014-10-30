@@ -9,7 +9,8 @@ console.log(a + ' ' + typeof a);
 a = {};
 console.log(a + ' ' + typeof a);
 
-a = function(param) {};
+a = function (param) {
+};
 console.log(a + ' ' + typeof a); // Despite being an object
 
 a = null;
